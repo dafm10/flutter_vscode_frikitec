@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vscode_frikitec/ui/general/colors.dart';
+import 'package:flutter_vscode_frikitec/ui/general/constants.dart';
 
 class ItemControlWidget extends StatelessWidget {
   String image;
   String title;
+  Function onPressed;
 
   ItemControlWidget({
     required this.image,
     required this.title,
+    required this.onPressed,
   });
 
   @override
@@ -18,20 +20,26 @@ class ItemControlWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Container(
-          margin: const EdgeInsets.only(left: 16.0, top: 20.0),
-          padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
-          width: size.width * 0.4,
-          height: size.height * 0.2,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12.0),
-            border: Border.all(
-              color: primaryColor,
-              width: size.width * 0.003,
+        GestureDetector(
+          onTap: () {
+            onPressed();
+          },
+          child: Container(
+            margin: const EdgeInsets.only(left: 16.0, top: 20.0),
+            padding:
+                const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
+            width: size.width * 0.4,
+            height: size.height * 0.2,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12.0),
+              border: Border.all(
+                color: primaryColor,
+                width: size.width * 0.003,
+              ),
             ),
-          ),
-          child: Image.asset(
-            "assets/icons/$image",
+            child: Image.asset(
+              "assets/icons/$image",
+            ),
           ),
         ),
         SizedBox(

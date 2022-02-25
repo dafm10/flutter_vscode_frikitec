@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vscode_frikitec/pages/admin/components/item_control_widget.dart';
+import 'package:flutter_vscode_frikitec/pages/admin/inventory/inventory_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -34,10 +35,19 @@ class _HomePageState extends State<HomePage> {
                 ItemControlWidget(
                   image: "inventory.png",
                   title: "Gestión de Inventario",
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => InventoryPage(),
+                      ),
+                    );
+                  },
                 ),
                 ItemControlWidget(
                   image: "price.png",
                   title: "Consulta de precios",
+                  onPressed: () {},
                 ),
               ],
             ),
@@ -46,10 +56,12 @@ class _HomePageState extends State<HomePage> {
                 ItemControlWidget(
                   image: "warehouse.png",
                   title: "Stock Actual",
+                  onPressed: () {},
                 ),
                 ItemControlWidget(
                   image: "box.png",
                   title: "Crear Producto",
+                  onPressed: () {},
                 ),
               ],
             ),
