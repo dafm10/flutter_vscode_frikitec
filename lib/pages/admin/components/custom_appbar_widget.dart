@@ -14,7 +14,7 @@ class CustomAppbarWidget extends StatelessWidget
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: primaryColor,
-      title: const Text("Inventario"),
+      title: Text(title),
       centerTitle: true,
       elevation: 0,
     );

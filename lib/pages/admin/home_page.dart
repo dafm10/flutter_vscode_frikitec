@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vscode_frikitec/pages/admin/components/item_control_widget.dart';
 import 'package:flutter_vscode_frikitec/pages/admin/inventory_page.dart';
+import 'package:flutter_vscode_frikitec/pages/admin/search_prices_page.dart';
+import 'package:flutter_vscode_frikitec/pages/admin/stock_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -47,7 +49,14 @@ class _HomePageState extends State<HomePage> {
                 ItemControlWidget(
                   image: "price.png",
                   title: "Consulta de precios",
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SearchPricesWidget(),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
@@ -56,11 +65,18 @@ class _HomePageState extends State<HomePage> {
                 ItemControlWidget(
                   image: "warehouse.png",
                   title: "Stock Actual",
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const StockPage(),
+                      ),
+                    );
+                  },
                 ),
                 ItemControlWidget(
                   image: "box.png",
-                  title: "Crear Producto",
+                  title: "Gestionar Producto",
                   onPressed: () {},
                 ),
               ],

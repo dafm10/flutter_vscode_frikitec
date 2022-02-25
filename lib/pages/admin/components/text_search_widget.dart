@@ -4,10 +4,12 @@ import 'package:flutter_vscode_frikitec/ui/general/constants.dart';
 class TextSearchwidget extends StatelessWidget {
   String labelText;
   IconData icon;
+  String? hintText;
 
   TextSearchwidget({
     required this.labelText,
     required this.icon,
+    this.hintText,
   });
 
   @override
@@ -15,6 +17,7 @@ class TextSearchwidget extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         labelText: labelText,
+        hintText: hintText,
         labelStyle: const TextStyle(
           color: Colors.black38,
         ),

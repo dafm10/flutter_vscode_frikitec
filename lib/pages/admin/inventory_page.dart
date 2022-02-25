@@ -32,14 +32,17 @@ class _InventoryPage extends State<InventoryPage> {
                     Expanded(
                       child: TextSearchwidget(
                         labelText: "Productos",
-                        icon: Icons.search,
+                        icon: Icons.inventory,
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 15.0, right: 10.0),
-                      child: SvgPicture.asset(
-                        "assets/icons/barcode.svg",
-                        height: 35,
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: SvgPicture.asset(
+                          "assets/icons/barcode.svg",
+                          height: 35,
+                        ),
                       ),
                     ),
                   ],
