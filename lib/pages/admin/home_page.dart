@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vscode_frikitec/pages/admin/components/item_control_widget.dart';
-import 'package:flutter_vscode_frikitec/pages/admin/inventory/inventory_page.dart';
+import 'package:flutter_vscode_frikitec/pages/admin/inventory_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
