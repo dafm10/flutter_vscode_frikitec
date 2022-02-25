@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_vscode_frikitec/pages/admin/add_update_product_page.dart';
 import 'package:flutter_vscode_frikitec/pages/admin/components/item_control_widget.dart';
 import 'package:flutter_vscode_frikitec/pages/admin/inventory_page.dart';
+import 'package:flutter_vscode_frikitec/pages/admin/product_list_page.dart';
 import 'package:flutter_vscode_frikitec/pages/admin/search_prices_page.dart';
 import 'package:flutter_vscode_frikitec/pages/admin/stock_page.dart';
+import 'package:flutter_vscode_frikitec/ui/general/constants.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -29,8 +32,24 @@ class _HomePageState extends State<HomePage> {
               "assets/images/logo.png",
               height: 150,
             ),
+            Divider(),
+            Text(
+              "Control Frikitec".toUpperCase(),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 22.0,
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 5.0),
+              width: size.width * 0.35,
+              height: size.height * 0.001,
+              decoration: const BoxDecoration(
+                color: primaryColor,
+              ),
+            ),
             SizedBox(
-              height: size.height * 0.05,
+              height: size.height * 0.02,
             ),
             Row(
               children: [
@@ -77,7 +96,14 @@ class _HomePageState extends State<HomePage> {
                 ItemControlWidget(
                   image: "box.png",
                   title: "Gestionar Producto",
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ProductListPage(),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
